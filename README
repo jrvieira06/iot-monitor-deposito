@@ -1,0 +1,21 @@
+# Monitor IoT de Depósito - Grupo Pleno
+
+Projeto final da disciplina de IoT (COMPET Superior) no Senac PE. O sistema utiliza um ESP32 para monitorar a temperatura e umidade de um depósito e acionar alertas.
+
+## 🛠️ Tecnologias e Hardware
+* ESP32
+* Sensor DHT22 (Temperatura e Umidade)
+* LED Vermelho e Buzzer (Alarme local)
+* C++ (Arduino IDE / Wokwi)
+* Protocolo MQTT (PubSubClient)
+* ThingSpeak (Broker e Dashboard)
+
+## ⚙️ Como funciona (Caminho C)
+O ESP32 faz a leitura dos dados a cada 20 segundos. Se a temperatura ultrapassar o limite calculado para o ambiente, o alarme local é acionado (LED + Buzzer) e o status de "ALERTA" é publicado via MQTT diretamente no canal do ThingSpeak, onde o gestor pode acompanhar o gráfico remotamente.
+
+## 🚀 Como simular
+1. Abra o [Wokwi](https://wokwi.com/).
+2. Crie um novo projeto ESP32.
+3. Substitua os arquivos `sketch.ino`, `diagram.json` e adicione as dependências no `libraries.txt`.
+4. Insira suas credenciais do ThingSpeak no código.
+5. Inicie a simulação.
